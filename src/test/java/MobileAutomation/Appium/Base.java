@@ -38,7 +38,20 @@ public class Base {
 		
 		d = new AndroidDriver( new URI("http://127.0.0.1:4723/wd/hub").toURL(), options);
 		d.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		Thread.sleep(3);
 		
+	}
+	
+	public void sleep(int a) throws InterruptedException {
+		Thread.sleep(a * 1000);
+	}
+	
+	public void draganddropgestures(WebElement from_element,int toX, int toY) {
+		((JavascriptExecutor) d).executeScript("mobile: dragGesture", ImmutableMap.of(
+			    "elementId", ((RemoteWebElement) from_element).getId(),
+			    "endX", 650,
+			    "endY", 579
+			));
 	}
 	
 	public void longPressAction(WebElement element) {
