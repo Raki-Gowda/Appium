@@ -9,7 +9,10 @@ import javax.management.openmbean.KeyAlreadyExistsException;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.DeviceRotation;
+import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
+
+import com.google.common.collect.ImmutableMap;
 
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.nativekey.AndroidKey;
@@ -19,10 +22,7 @@ public class AppPackage_and_AppActivity extends Base{
 	
 	@Test
 	public void WifiSettingname() throws MalformedURLException, URISyntaxException, InterruptedException {
-		
-		d.findElement(AppiumBy.accessibilityId("Preference")).click();
-		
-		d.findElement(By.xpath("//android.widget.TextView[@content-desc=\"3. Preference dependencies\"]")).click();
+		((JavascriptExecutor)d).executeScript("mobile:startActivity", ImmutableMap.of("intent","io.appium.android.apis/io.appium.android.apis.preference.PreferenceDependencies"));
 		
 		d.findElement(By.id("android:id/checkbox")).click();
 		
