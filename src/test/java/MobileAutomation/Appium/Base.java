@@ -14,6 +14,7 @@ import org.testng.annotations.BeforeClass;
 
 import com.google.common.collect.ImmutableMap;
 
+import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
@@ -31,8 +32,10 @@ public class Base {
 		
 //		service.start();
 		UiAutomator2Options options = new UiAutomator2Options();
-		options.setApp("C:\\Users\\KaHa\\Documents\\01 - Selenium\\Appium\\src\\test\\java\\resources\\ApiDemos-debug.apk");
+//		options.setApp("C:\\Users\\KaHa\\Documents\\01 - Selenium\\Appium\\src\\test\\java\\resources\\ApiDemos-debug.apk");
+		options.setApp("C:\\Users\\KaHa\\Documents\\01 - Selenium\\Appium\\src\\test\\java\\resources\\General-Store.apk");
 		options.setDeviceName("Appium");
+		options.setChromedriverExecutable("C:\\Users\\KaHa\\Documents\\01 - Selenium\\Appium\\src\\test\\java\\resources\\chromedriver.exe");
 		options.setPlatformName("Android");
 		
 		
@@ -40,6 +43,18 @@ public class Base {
 		d.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		Thread.sleep(3);
 		
+	}
+	
+	public Double getFormattedAmount(String amount) {
+		
+		Double Price = Double.parseDouble(amount);
+		
+		return Price;
+				
+	}
+	
+	public void scroll(String text) {
+		d.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(text))"));
 	}
 	
 	public void sleep(int a) throws InterruptedException {
