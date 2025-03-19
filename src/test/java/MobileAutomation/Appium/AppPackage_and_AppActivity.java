@@ -26,9 +26,9 @@ public class AppPackage_and_AppActivity extends Base{
 		
 		d.findElement(By.id("android:id/checkbox")).click();
 		
-		DeviceRotation landsccape = new DeviceRotation(0, 0, 90);
+		DeviceRotation landscape = new DeviceRotation(0, 0, 90);
 		
-		d.rotate(landsccape);
+		d.rotate(landscape);
 		
 		d.findElement(AppiumBy.androidUIAutomator("new UiSelector().className(\"android.widget.RelativeLayout\").instance(1)")).click();
 		
