@@ -6,6 +6,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.time.Duration;
 
+import org.RakiGowda.pageObjects.android.formPage;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
@@ -24,6 +25,7 @@ public class Base {
 	
 	public static AndroidDriver d;
 	public AppiumDriverLocalService service;
+	public formPage p;
 	
 	@BeforeClass
 	public void Start() throws InterruptedException, MalformedURLException, URISyntaxException {
@@ -43,58 +45,9 @@ public class Base {
 		d.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		Thread.sleep(3);
 		
-	}
-	
-	public Double getFormattedAmount(String amount) {
+	     p = new formPage(d);
 		
-		Double Price = Double.parseDouble(amount);
-		
-		return Price;
-				
 	}
-	
-	public void scroll(String text) {
-		d.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(text))"));
-	}
-	
-	public void sleep(int a) throws InterruptedException {
-		Thread.sleep(a * 1000);
-	}
-	
-	public void draganddropgestures(WebElement from_element,int toX, int toY) {
-		((JavascriptExecutor) d).executeScript("mobile: dragGesture", ImmutableMap.of(
-			    "elementId", ((RemoteWebElement) from_element).getId(),
-			    "endX", 650,
-			    "endY", 579
-			));
-	}
-	
-	public void longPressAction(WebElement element) {
-		((JavascriptExecutor) d).executeScript("mobile: longClickGesture", ImmutableMap.of(
-			    "elementId", ((RemoteWebElement) element).getId(),"duration",2000
-			));
-	}
-	
-	public void scrollToEnd() {
-		boolean canScrollMore;
-		do {
-		 canScrollMore = (Boolean) ((JavascriptExecutor) d).executeScript("mobile: scrollGesture", ImmutableMap.of(
-			    "left", 100, "top", 100, "width", 200, "height", 200,
-			    "direction", "down",
-			    "percent", 1.0
-			)); 
-		}
-		while(canScrollMore);
-	}
-	
-	public void swipeGesture(WebElement ele,String direction) {
-		((JavascriptExecutor) d).executeScript("mobile: swipeGesture", ImmutableMap.of(
-				"elementId", ((RemoteWebElement) ele).getId(),
-			    "direction", direction,
-			    "percent", 0.75
-			));
-		
-	} 
 	
 	
 	@AfterClass

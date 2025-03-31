@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-03-31T16:51:09 IST" name="Default suite" finished-at="2025-03-31T16:52:00 IST" duration-ms="51599">
+    <groups>
+    </groups>
+    <test started-at="2025-03-31T16:51:09 IST" name="Default test" finished-at="2025-03-31T16:52:00 IST" duration-ms="51599">
+      <class name="org.RakiGowda.AppiumFramework.Commerce_tests_form">
+        <test-method is-config="true" signature="Start()[pri:0, instance:org.RakiGowda.AppiumFramework.Commerce_tests_form@13c9d689]" started-at="2025-03-31T16:51:09 IST" name="Start" finished-at="2025-03-31T16:51:17 IST" duration-ms="8386" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Start -->
+        <test-method signature="toast_error()[pri:1, instance:org.RakiGowda.AppiumFramework.Commerce_tests_form@13c9d689]" started-at="2025-03-31T16:51:17 IST" name="toast_error" finished-at="2025-03-31T16:51:23 IST" duration-ms="5850" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- toast_error -->
+        <test-method signature="fillForm_positiveFlow()[pri:2, instance:org.RakiGowda.AppiumFramework.Commerce_tests_form@13c9d689]" started-at="2025-03-31T16:51:23 IST" name="fillForm_positiveFlow" finished-at="2025-03-31T16:52:00 IST" duration-ms="36928" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fillForm_positiveFlow -->
+        <test-method is-config="true" signature="stop()[pri:0, instance:org.RakiGowda.AppiumFramework.Commerce_tests_form@13c9d689]" started-at="2025-03-31T16:52:00 IST" name="stop" finished-at="2025-03-31T16:52:00 IST" duration-ms="387" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stop -->
+      </class> <!-- org.RakiGowda.AppiumFramework.Commerce_tests_form -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
